@@ -52,9 +52,10 @@
     <section id="wrapper">
       <header>
         <div class="inner">
-          <h2>
-            <img src="images/syntinel_logo_text.png" style="width: 654px; height: 200px;">
-          </h2>
+          <div class="logo">
+            <img src="images/syntinel_logo.png" style="width: 100px; height: 100px;">
+          </div>
+          <h2>Syntinel</h2>
           <p>Syntinel is a policy enforcement engine for Amazon Web Services and Microsoft Azure.</p>
         </div>
       </header>
@@ -62,118 +63,45 @@
       <div class="wrapper">
         <div class="inner">
           <section>
-            <h2> Elements </h2>
-            <h3 class="major">Synapse.Core</h3>
-            <p>Synapse.Core hosts the workflow engine and objects. This project also includes Synapse.Cli, which is useful for
-              testing Synapse Plans. If you want to create/test Plans locally or develop a custom Handler, this is the place
-              to start. Read about the basics of Synapse Plans
-              <a href="https://medium.com/@synapseproject/synapse-techspecs-plans-a02943fdeb7e" target="_blank">here</a>.</p>
-            <p></p>
-            <div class="icon fa-github">&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/SynapseProject/synapse.core.net">Source Code
-              </a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/SynapseProject/synapse.core.net/releases">Current Release.
-              </a>
-              <p></p>
-              <h3 class="major">Synapse.Server</h3>
-              <p>Synapse.Server is the API/daemon for launching/controlling/executing Synapse Plans via Synapse.Controller and
-                Synapse.Node.
-              </p>
-              <h4>Components</h4>
-              <div class="table-wrapper">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Synapse.Controller</td>
-                      <td>An API for starting/cancelling Synapse Plan execution and recording status. Manages execution log-capture
-                        and keeps detailed audit logs.</td>
-                    </tr>
-                    <tr>
-                      <td>Controller DataAccessLayer</td>
-                      <td>The Controller DAL is for persisting Plans and Plan execution history. Current implemetations include
-                        FileSystem, MongoDB, and SQL Server.</td>
-                    </tr>
-                    <tr>
-                      <td>Controller Custom Assemblies</td>
-                      <td>The Controller supports a URI extensibility pattern for custom data/integration patterns. Read more
-                        <a href="https://medium.com/@synapseproject/what-is-synapse-3a08e20380d0" target="_blank">here</a>.</td>
-                    </tr>
-                    <tr>
-                      <td>Synapse.Node</td>
-                      <td>A server daemon designed to act as remote Synapse.Core agent. Synapse.Node can execute local or remote
-                        processes.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>CommandLine Interfaces</td>
-                      <td>Synapse.Controller/.Node both have fully-featured CLIs for interacting with the REST APIs.</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="icon fa-github">&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://github.com/SynapseProject/synapse.server.net">Source Code
-                </a> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://github.com/SynapseProject/synapse.server.net/releases">Current release.
-                </a>
-                <p></p>
-                <h3 class="major">Handlers</h3>
-                <p>Synapse Handlers provide the technical implementation for Plan functional capability. Essentially, a handler
-                  can do "anything," thus providing a rich extensibility platform. You can build/test custom handlers with
-                  a dependecy on Synapse.Core, and you host Handlers as part of Synapse.Node.</p>
-                Read more
-                <a href="https://medium.com/@synapseproject/synapse-techspecs-custom-handler-9a1afbe2ef9c" target="_blank">here</a>.
-                <p></p>
-                <div class="icon fa-github">&nbsp;&nbsp;&nbsp;&nbsp;
-                  <a href="https://github.com/SynapseProject/">Source Code Repos for all Handlers</a>
-                  <p></p>
-                </div>
-              </div>
-            </div>
           </section>
         </div>
       </div>
     </section>
     <!-- Footer -->
     <section id="footer">
-      <div class="inner">
-        <h2 class="major">Get the code, Get Support</h2>
-        <p>Primary support channels for Synapse are on GitHub, Slack, and StackOverflow. Communicaton on these channels keeps
-          information in a public forum and allows for a collaborative approach to problem solving.
-        </p>
-        <ul class="contact">
-          <li class="fa-github">
-            <a href="https://github.com/SynapseProject" target="_blank">GitHub Projects
-            </a>
-          </li>
-          <li class="fa-book">
-            <a href="http://synapse.readthedocs.io/en/latest/" target="_blank">Read the Docs!</a>
-          </li>
-          <li class="fa-slack">Chat with us on slack</li>
-          <li class="fa-stack-overflow">
-            <a href="https://stackoverflow.com/" target="_blank">Post questions on StackOverflow tagged with:
-              <em>SynapseProject</em>
-            </a>
-          </li>
-          <li class="fa-envelope">If you must:
-            <a href="mailto:%73yn%61p%73e.proj%65ct@%6Futlook.c%6Fm">synapse[dot]project[at]outlook[dot]com</a>
-          </li>
-        </ul>
-        <ul class="copyright">
-          <li>© Steve Shortt. All rights reserved.</li>
-          <li>Design:
-            <a href="http://html5up.net" target="_blank">HTML5 UP</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-  </div>
+        <div class="inner">
+          <h2 class="major">Get the code, Get Support</h2>
+          <p>Primary support channels for Synapse are on GitHub, Slack, and StackOverflow. Communicaton on these channels keeps
+            information in a public forum and allows for a collaborative approach to problem solving. </p>
+          <ul class="contact">
+            <li class="fa-github">
+              <a href="https://github.com/SynapseProject" target="_blank">GitHub Projects </a>
+            </li>
+            <li class="fa-book">
+              <a href="http://synapse.readthedocs.io/en/latest/" target="_blank">Read the Docs!</a>
+            </li>
+            <li class="fa-slack">
+              <a href="https://join&#37;2&#69;&#115;%6Ca&#37;63k&#46;co%&#54;&#68;/&#37;74&#47;t&#104;es%79&#110;%61%&#55;0s%65p%&#55;&#50;&#111;je%63t&#47;&#37;73%68&#37;6&#49;&#114;ed&#95;i&#110;v&#37;69te/&#37;65nQtM&#106;Y4Mz&#81;yMj%&#53;&#57;zOTI3%4CWE4M%44%591Z&#106;d&#104;OWI%33OT&#37;4Ah%4&#69;&#87;%593%&#53;9m%5AjYzE%32Y&#122;&#70;&#108;MzA1MTk3N&#109;M%77&#37;4FG&#37;511NDlmNTYxNT&#99;1Z&#37;4&#55;RiM&#37;6DU%31%4E%5&#52;Rj&#37;&#53;A&#87;&#90;jND%5&#50;%&#54;DY%6DU"
+                target="_blank">Chat with us on slack.</a>
+            </li>
+            <li class="fa-stack-overflow">
+              <a href="https://stackoverflow.com/" target="_blank">Post questions on StackOverflow tagged with:
+                <em>SynapseProject</em>
+              </a>
+            </li>
+            <li class="fa-envelope">If you must:
+              <a href="mailto:%73yn%61p%73e.proj%65ct@%6Futlook.c%6Fm">synapse[dot]project[at]outlook[dot]com</a>
+            </li>
+          </ul>
+          <ul class="copyright">
+            <li>© Steve Shortt. All rights reserved.</li>
+            <li>Design:
+              <a href="http://html5up.net" target="_blank">HTML5 UP</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
   <!-- Scripts -->
   <script src="assets/js/skel.min.js"></script>
   <script src="assets/js/jquery.min.js"></script>

@@ -52,9 +52,10 @@
     <section id="wrapper">
       <header>
         <div class="inner">
-          <h2>
-            <img src="images/mryiad_logo_grey_full.png" style="width: 399px; height: 200px;">
-          </h2>
+          <div class="logo">
+            <img src="images/mryiad_logo_grey.png" style="width: 100px; height: 100px;">
+          </div>
+          <h2>myriAD</h2>
           <p>myriAD is a REST API for Microsoft Active Directory that provides a fully featured, RBAC-enabled JSON interface
             to AD.</p>
         </div>
@@ -63,79 +64,68 @@
       <div class="wrapper">
         <div class="inner">
           <section>
-            <h2> Elements </h2>
-            <h3 class="major">Synapse.Core</h3>
-            <p>Synapse.Core hosts the workflow engine and objects. This project also includes Synapse.Cli, which is useful for
-              testing Synapse Plans. If you want to create/test Plans locally or develop a custom Handler, this is the place
-              to start. Read about the basics of Synapse Plans
-              <a href="https://medium.com/@synapseproject/synapse-techspecs-plans-a02943fdeb7e"
-                target="_blank">here</a>.</p>
-            <p></p>
+            <h2>Overview</h2>
+            <p>The myriAD Active Directory REST API is designed to provide an interface to manage AD objects, and is suitable
+              for integration in service oriented architectures (SOA), enterprise applications, support workflows, or basic
+              utility scripts.</p>
+
             <div class="icon fa-github">&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/SynapseProject/synapse.core.net">Source Code
+              <a href="https://github.com/SynapseProject/handlers.ActiveDirectory.net" target="_blank">Source Code
               </a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/SynapseProject/synapse.core.net/releases">Current Release.
+              <a href="https://github.com/SynapseProject/handlers.ActiveDirectory.net/releases" target="_blank">Current Release
               </a>
-              <p></p>
-              <h3 class="major">Synapse.Server</h3>
-              <p>Synapse.Server is the API/daemon for launching/controlling/executing Synapse Plans via Synapse.Controller and
-                Synapse.Node.</p>
-              <h4>Components</h4>
-              <div class="table-wrapper">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Synapse.Controller</td>
-                      <td>An API for starting/cancelling Synapse Plan execution and recording status. Manages execution log-capture
-                        and keeps detailed audit logs.</td>
-                    </tr>
-                    <tr>
-                      <td>Controller DataAccessLayer</td>
-                      <td>The Controller DAL is for persisting Plans and Plan execution history. Current implemetations include
-                        FileSystem, MongoDB, and SQL Server.</td>
-                    </tr>
-                    <tr>
-                      <td>Controller Custom Assemblies</td>
-                      <td>The Controller supports a URI extensibility pattern for custom data/integration patterns. Read more
-                        <a href="https://medium.com/@synapseproject/what-is-synapse-3a08e20380d0" target="_blank">here</a>.</td>
-                    </tr>
-                    <tr>
-                      <td>Synapse.Node</td>
-                      <td>A server daemon designed to act as remote Synapse.Core agent. Synapse.Node can execute local or remote
-                        processes.</td>
-                    </tr>
-                    <tr>
-                      <td>CommandLine Interfaces</td>
-                      <td>Synapse.Controller/.Node both have fully-featured CLIs for interacting with the REST APIs.</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="icon fa-github">&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://github.com/SynapseProject/synapse.server.net">Source Code
-                </a> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://github.com/SynapseProject/synapse.server.net/releases">Current release.
-                </a>
-                <p></p>
-                <h3 class="major">Handlers</h3>
-                <p>Synapse Handlers provide the technical implementation for Plan functional capability. Essentially, a handler
-                  can do "anything," thus providing a rich extensibility platform. You can build/test custom handlers with
-                  a dependecy on Synapse.Core, and you host Handlers as part of Synapse.Node.</p>
-                Read more
-                <a href="https://medium.com/@synapseproject/synapse-techspecs-custom-handler-9a1afbe2ef9c" target="_blank">here</a>.
-                <p></p>
-                <div class="icon fa-github">&nbsp;&nbsp;&nbsp;&nbsp;
-                  <a href="https://github.com/SynapseProject/">Source Code Repos for all Handlers</a>
-                  <p></p>
-                </div>
-              </div>
             </div>
+
+            <p></p>
+
+            <h3>AD Data Consumption Model</h3>
+            <p>Accessing the AD objects comes under two options: 1) native object access, such as security principals, OUs,
+              GPOs, etc., or 2) embedded workflow scripts.</p>
+
+            <h4>Example: Native Object Access for User Objects</h4>
+            Users
+            <ul>
+              <li>Base URI: /myriad/user</li>
+              <li>Supports: Create, Update, Delete for User security principal objects, plus group membership updates.</li>
+              <li>DACL: self-update, inherited permissions.</li>
+              <li>Identified by Name, DistinguishedName, UserPrincipal, sAMAccountName, SId, or GUID</li>
+            </ul>
+            <ul>
+              <div> HTTP GET: </div>
+              <ul>
+                <li>http://{host:port}/myriad/user/user0 (by Name)</li>
+                <li>http://{host:port}/myriad/user/CN=user0,OU=Synapse,DC=sandbox,DC=local (by DistinguishedName)</li>
+                <li>http://{host:port}/myriad/user/user1@sandbox.local (by UserPrincipalName)
+                </li>
+                <li>http://{host:port}/myriad/user/user2 (by sAMAccountName)</li>
+                <li>http://{host:port}/myriad/user/S-1-5-21-4054027134-3251639354-3875066094-1659 (by SId)</li>
+                <li>http://{host:port}/myriad/user/545149c9-323a-4083-ad02-68022dd324b0 (by GUID)</li>
+              </ul>
+              <p></p>
+              <details style="cursor: pointer;">
+                <summary>Example of REST GET Response for User Object</summary>
+                <script src="https://gist.github.com/SynapseGists/0494cb2e6406eb5d64eac6545e62044c.js"></script>
+              </details>
+            </ul>
+            <p></p>
+            <h3>Embedded Workflows</h3>
+            <p>The ADAPI is built on Synapse and supports embedding an entire workflow, which can be coded in a variety of languages.
+              Embedded workflows are best used to support highly-repeatable, compound-functions with multiple AD-dependency
+              steps.
+            </p>
+            <h3>Security Design</h3>
+            <p>Objects are accessible under a discretionary access control list (DACL) model, meaning objects are directly permissioned
+              with allowed security principals. This implies that any tooling of choice may be used to manipulate allowed
+              objects; the ADAPI provides a data-driven implementation of convenience, and is guaranteed to meet implementation
+              standards for audit, logging, etc. In an enterprise setting, a typical implementation would populate the DACL
+              via an entitlements-based RBAC-grant process, where myriAD is participating in an SOA.</p>
+            <p>Embedded workflow scripts are serviced by the native myriAD (Synapse) RBAC and permmissioned accordingly. Typical
+              implementation would be for dedicated requirements.</p>
+            <h3>Technical Structure</h3>
+            <h4>Directory Services and LDAP Core Library</h4>
+            <p>All technical capability is housed in a .NET library, which contains the POCOs, worker classes, and utility methods.
+              Unit testing exercises these objects/classes. The REST API is a simple wrapper on the DS/LDAP core lib - it
+              provides the URI structure, JSON payloads/responses, and logging.</p>
           </section>
         </div>
       </div>
@@ -145,17 +135,18 @@
       <div class="inner">
         <h2 class="major">Get the code, Get Support</h2>
         <p>Primary support channels for Synapse are on GitHub, Slack, and StackOverflow. Communicaton on these channels keeps
-          information in a public forum and allows for a collaborative approach to problem solving.
-        </p>
+          information in a public forum and allows for a collaborative approach to problem solving. </p>
         <ul class="contact">
           <li class="fa-github">
-            <a href="https://github.com/SynapseProject" target="_blank">GitHub Projects
-            </a>
+            <a href="https://github.com/SynapseProject" target="_blank">GitHub Projects </a>
           </li>
           <li class="fa-book">
             <a href="http://synapse.readthedocs.io/en/latest/" target="_blank">Read the Docs!</a>
           </li>
-          <li class="fa-slack">Chat with us on slack</li>
+          <li class="fa-slack">
+            <a href="https://join&#37;2&#69;&#115;%6Ca&#37;63k&#46;co%&#54;&#68;/&#37;74&#47;t&#104;es%79&#110;%61%&#55;0s%65p%&#55;&#50;&#111;je%63t&#47;&#37;73%68&#37;6&#49;&#114;ed&#95;i&#110;v&#37;69te/&#37;65nQtM&#106;Y4Mz&#81;yMj%&#53;&#57;zOTI3%4CWE4M%44%591Z&#106;d&#104;OWI%33OT&#37;4Ah%4&#69;&#87;%593%&#53;9m%5AjYzE%32Y&#122;&#70;&#108;MzA1MTk3N&#109;M%77&#37;4FG&#37;511NDlmNTYxNT&#99;1Z&#37;4&#55;RiM&#37;6DU%31%4E%5&#52;Rj&#37;&#53;A&#87;&#90;jND%5&#50;%&#54;DY%6DU"
+              target="_blank">Chat with us on slack.</a>
+          </li>
           <li class="fa-stack-overflow">
             <a href="https://stackoverflow.com/" target="_blank">Post questions on StackOverflow tagged with:
               <em>SynapseProject</em>

@@ -52,9 +52,10 @@
     <section id="wrapper">
       <header>
         <div class="inner">
-          <h2>
-            <img src="images/synapse_banner.png" style="width: 670px; height: 200px;">
-          </h2>
+          <div class="logo">
+            <img src="images/synapse_logo_rev.png" style="width: 100px; height: 100px;">
+          </div>
+          <h2>Synapse Core/Server</h2>
           <p>Synapse is a lightweight execution engine for unifying federated data sources and processes.</p>
         </div>
       </header>
@@ -67,7 +68,7 @@
               a REST-enabled, distributed execution platform, wherein Synapse Controller brokers Plans to Synapse Nodes.
               Synapse Node is a wrapper on the Synapse Core workflow engine. </p>
             <div class="logo">
-              <img src="images/syn_architecture_full.png" style="width: 1001px; height: 692px;">
+              <img src="images/syn_architecture_full.png" style="max-width:100%; height: auto;">
             </div>
             <p> </p>
             <h2> Elements </h2>
@@ -75,100 +76,103 @@
             <p>Synapse.Core hosts the workflow engine and objects. This project also includes Synapse.Cli, which is useful for
               testing Synapse Plans. If you want to create/test Plans locally or develop a custom Handler, this is the place
               to start. Read about the basics of Synapse Plans
-              <a href="https://medium.com/@synapseproject/synapse-techspecs-plans-a02943fdeb7e"
-                target="_blank">here</a>.</p>
+              <a href="https://medium.com/@synapseproject/synapse-techspecs-plans-a02943fdeb7e" target="_blank">here</a>.</p>
             <p></p>
             <div class="icon fa-github">&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/SynapseProject/synapse.core.net">Source Code
+              <a href="https://github.com/SynapseProject/synapse.core.net" target="_blank">Source Code
               </a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/SynapseProject/synapse.core.net/releases">Current Release.
+              <a href="https://github.com/SynapseProject/synapse.core.net/releases" target="_blank">Current Release
+              </a>
+            </div>
+            <p></p>
+            <h3 class="major">Synapse.Server</h3>
+            <p>Synapse.Server is the API/daemon for launching/controlling/executing Synapse Plans via Synapse.Controller and
+              Synapse.Node.
+            </p>
+            <h4>Components</h4>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Synapse.Enterprise (coming soon)</td>
+                    <td>An API for managing Plans in an enterprise setting: Synapse.Enterprise provides robust hierarchical,
+                      inheritance-based security patterns, support for multi-tenant hosting, application environments, execution
+                      delegation, and more.</td>
+                  </tr>
+                  <tr>
+                    <td>Synapse.Controller</td>
+                    <td>An API for starting/cancelling Synapse Plan execution and recording status. Manages execution log-capture
+                      and keeps detailed audit logs.</td>
+                  </tr>
+                  <tr>
+                    <td>Controller DataAccessLayer</td>
+                    <td>The Controller DAL is for persisting Plans and Plan execution history. Current implementations include
+                      FileSystem, MongoDB, and SQL Server.</td>
+                  </tr>
+                  <tr>
+                    <td>Controller Custom Assemblies</td>
+                    <td>The Controller supports a URI extensibility pattern for custom data/integration patterns. Read more
+                      <a href="https://medium.com/@synapseproject/what-is-synapse-3a08e20380d0" target="_blank">here</a>.</td>
+                  </tr>
+                  <tr>
+                    <td>Synapse.Node</td>
+                    <td>A server daemon designed to act as remote Synapse.Core agent. Synapse.Node can execute local or remote
+                      processes.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>CommandLine Interfaces</td>
+                    <td>Synapse.Controller/.Node both have fully-featured CLIs for interacting with the REST APIs.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="icon fa-github">&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://github.com/SynapseProject/synapse.server.net">Source Code
+              </a> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://github.com/SynapseProject/synapse.server.net/releases">Current Release
               </a>
               <p></p>
-              <h3 class="major">Synapse.Server</h3>
-              <p>Synapse.Server is the API/daemon for launching/controlling/executing Synapse Plans via Synapse.Controller and
-                Synapse.Node.</p>
-              <h4>Components</h4>
-              <div class="table-wrapper">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Synapse.Enterprise (coming soon)</td>
-                      <td>An API for managing Plans in an enterprise setting: Synapse.Enterprise provides robust hierarchical,
-                        inheritance-based security patterns, support for multi-tenant hosting, application environments,
-                        execution delegation, and more.</td>
-                    </tr>
-                    <tr>
-                      <td>Synapse.Controller</td>
-                      <td>An API for starting/cancelling Synapse Plan execution and recording status. Manages execution log-capture
-                        and keeps detailed audit logs.</td>
-                    </tr>
-                    <tr>
-                      <td>Controller DataAccessLayer</td>
-                      <td>The Controller DAL is for persisting Plans and Plan execution history. Current implementations include
-                        FileSystem, MongoDB, and SQL Server.</td>
-                    </tr>
-                    <tr>
-                      <td>Controller Custom Assemblies</td>
-                      <td>The Controller supports a URI extensibility pattern for custom data/integration patterns. Read more
-                        <a href="https://medium.com/@synapseproject/what-is-synapse-3a08e20380d0" target="_blank">here</a>.</td>
-                    </tr>
-                    <tr>
-                      <td>Synapse.Node</td>
-                      <td>A server daemon designed to act as remote Synapse.Core agent. Synapse.Node can execute local or remote
-                        processes.</td>
-                    </tr>
-                    <tr>
-                      <td>CommandLine Interfaces</td>
-                      <td>Synapse.Controller/.Node both have fully-featured CLIs for interacting with the REST APIs.</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <h3 class="major">Handlers</h3>
+              <p>Synapse Handlers provide the technical implementation for Plan functional capability. Essentially, a handler
+                can do "anything," thus providing a rich extensibility platform. You can build/test custom handlers with
+                a dependency on Synapse.Core, and you host Handlers as part of Synapse.Node.</p>
+              Read more
+              <a href="https://medium.com/@synapseproject/synapse-techspecs-custom-handler-9a1afbe2ef9c" target="_blank">here</a>.
+              <p></p>
               <div class="icon fa-github">&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://github.com/SynapseProject/synapse.server.net">Source Code
-                </a> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://github.com/SynapseProject/synapse.server.net/releases">Current release.
-                </a>
+                <a href="https://github.com/SynapseProject/">Source Code Repos for all Handlers</a>
                 <p></p>
-                <h3 class="major">Handlers</h3>
-                <p>Synapse Handlers provide the technical implementation for Plan functional capability. Essentially, a handler
-                  can do "anything," thus providing a rich extensibility platform. You can build/test custom handlers with
-                  a dependency on Synapse.Core, and you host Handlers as part of Synapse.Node.</p>
-                Read more
-                <a href="https://medium.com/@synapseproject/synapse-techspecs-custom-handler-9a1afbe2ef9c" target="_blank">here</a>.
-                <p></p>
-                <div class="icon fa-github">&nbsp;&nbsp;&nbsp;&nbsp;
-                  <a href="https://github.com/SynapseProject/">Source Code Repos for all Handlers</a>
-                  <p></p>
-                </div>
               </div>
             </div>
-          </section>
         </div>
+        </section>
       </div>
-    </section>
-    <!-- Footer -->
-    <section id="footer">
+  </div>
+  </section>
+  <!-- Footer -->
+  <section id="footer">
       <div class="inner">
         <h2 class="major">Get the code, Get Support</h2>
         <p>Primary support channels for Synapse are on GitHub, Slack, and StackOverflow. Communicaton on these channels keeps
-          information in a public forum and allows for a collaborative approach to problem solving.
-        </p>
+          information in a public forum and allows for a collaborative approach to problem solving. </p>
         <ul class="contact">
           <li class="fa-github">
-            <a href="https://github.com/SynapseProject" target="_blank">GitHub Projects
-            </a>
+            <a href="https://github.com/SynapseProject" target="_blank">GitHub Projects </a>
           </li>
           <li class="fa-book">
             <a href="http://synapse.readthedocs.io/en/latest/" target="_blank">Read the Docs!</a>
           </li>
-          <li class="fa-slack">Chat with us on slack</li>
+          <li class="fa-slack">
+            <a href="https://join&#37;2&#69;&#115;%6Ca&#37;63k&#46;co%&#54;&#68;/&#37;74&#47;t&#104;es%79&#110;%61%&#55;0s%65p%&#55;&#50;&#111;je%63t&#47;&#37;73%68&#37;6&#49;&#114;ed&#95;i&#110;v&#37;69te/&#37;65nQtM&#106;Y4Mz&#81;yMj%&#53;&#57;zOTI3%4CWE4M%44%591Z&#106;d&#104;OWI%33OT&#37;4Ah%4&#69;&#87;%593%&#53;9m%5AjYzE%32Y&#122;&#70;&#108;MzA1MTk3N&#109;M%77&#37;4FG&#37;511NDlmNTYxNT&#99;1Z&#37;4&#55;RiM&#37;6DU%31%4E%5&#52;Rj&#37;&#53;A&#87;&#90;jND%5&#50;%&#54;DY%6DU"
+              target="_blank">Chat with us on slack.</a>
+          </li>
           <li class="fa-stack-overflow">
             <a href="https://stackoverflow.com/" target="_blank">Post questions on StackOverflow tagged with:
               <em>SynapseProject</em>
@@ -186,7 +190,7 @@
         </ul>
       </div>
     </section>
-</div>
+  </div>
   <!-- Scripts -->
   <script src="assets/js/skel.min.js"></script>
   <script src="assets/js/jquery.min.js"></script>
