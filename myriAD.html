@@ -78,34 +78,111 @@
             <p></p>
 
             <h3>AD Data Consumption Model</h3>
-            <p>Accessing the AD objects comes under two options: 1) native object access, such as security principals, OUs,
-              GPOs, etc., or 2) embedded workflow scripts.</p>
-
-            <h4>Example: Native Object Access for User Objects</h4>
-            Users
-            <ul>
-              <li>Base URI: /myriad/user</li>
-              <li>Supports: Create, Update, Delete for User security principal objects, plus group membership updates.</li>
-              <li>DACL: self-update, inherited permissions.</li>
-              <li>Identified by Name, DistinguishedName, UserPrincipal, sAMAccountName, SId, or GUID</li>
-            </ul>
-            <ul>
-              <div> HTTP GET: </div>
-              <ul>
-                <li>http://{host:port}/myriad/user/user0 (by Name)</li>
-                <li>http://{host:port}/myriad/user/CN=user0,OU=Synapse,DC=sandbox,DC=local (by DistinguishedName)</li>
-                <li>http://{host:port}/myriad/user/user1@sandbox.local (by UserPrincipalName)
+            <p class="trimmed">Accessing the AD objects comes under two options: 1) native object access, such as security principals, OUs, GPOs, etc.,
+              or 2) embedded workflow scripts.</p>
+            
+            <div class="framed">
+              <h4>Summary of Native Object Access for User Objects</h4>
+              <ul class="trimmed">
+                <li>Base URI: /myriad/user</li>
+                <li>Supports: Create, Update, Delete for User security principal objects, plus group membership updates.</li>
+                <li>DACL: self-update, inherited permissions.</li>
+                <li>Identified by Name, DistinguishedName, UserPrincipal, sAMAccountName, SId, or GUID</li>
+                <li>
+                  <details>
+                    <summary>
+                      <b>Example: HTTP GET</b>
+                    </summary>
+            
+                    <ul class="trimmed">
+                      <li>http://{host:port}/myriad/user/user0 (by Name)</li>
+                      <li>http://{host:port}/myriad/user/CN=user0,OU=Synapse,DC=sandbox,DC=local (by DistinguishedName)</li>
+                      <li>http://{host:port}/myriad/user/user1@sandbox.local (by UserPrincipalName)</li>
+                      <li>http://{host:port}/myriad/user/user2 (by sAMAccountName)</li>
+                      <li>http://{host:port}/myriad/user/S-1-5-21-4054027134-3251639354-3875066094-1659 (by SId)</li>
+                      <li>http://{host:port}/myriad/user/545149c9-323a-4083-ad02-68022dd324b0 (by GUID)</li>
+                      <li>
+                        <details>
+                          <summary>
+                            <b>JSON GET Response for User Object</b>
+                          </summary>
+                          <script src="https://gist.github.com/SynapseGists/0494cb2e6406eb5d64eac6545e62044c.js"></script>
+                        </details>
+                      </li>
+                    </ul>
+                  </details>
                 </li>
-                <li>http://{host:port}/myriad/user/user2 (by sAMAccountName)</li>
-                <li>http://{host:port}/myriad/user/S-1-5-21-4054027134-3251639354-3875066094-1659 (by SId)</li>
-                <li>http://{host:port}/myriad/user/545149c9-323a-4083-ad02-68022dd324b0 (by GUID)</li>
               </ul>
-              <p></p>
-              <details style="cursor: pointer;">
-                <summary>Example of REST GET Response for User Object</summary>
-                <script src="https://gist.github.com/SynapseGists/0494cb2e6406eb5d64eac6545e62044c.js"></script>
-              </details>
-            </ul>
+            </div>
+
+            <p class="trimmed"></p>
+
+            <div class="framed">
+              <h4>Summary of Native Object Access for Group Objects</h4>
+              <ul class="trimmed">
+                <li>Base URI: /myriad/group</li>
+                <li>Supports: Create, Update, Delete for Group security principal objects, plus group membership updates.</li>
+                <li>DACL: ManagedBy, inherited permissions.</li>
+                <li>Identified by Name, DistinguishedName, sAMAccountName, SId, or GUID/li>
+                <li>
+                  <details>
+                    <summary>
+                      <b>Example: HTTP GET</b>
+                    </summary>
+            
+                    <ul class="trimmed">
+                      <li>http://{host:port}/myriad/group/MyGroup  (by Name)</li>
+                      <li>http://{host:port}/myriad/group/CN=MyGroup,OU=Synapse,DC=sandbox,DC=local  (by DistinguishedName)</li>
+                      <li>http://{host:port}/myriad/group/MyGroupSam  (by sAMAccountName)</li>
+                      <li>http://{host:port}/myriad/group/S-1-5-21-4054027134-3251639354-3875066094-1660  (by SId)</li>
+                      <li>http://{host:port}/myriad/group/e74156dd-6cbb-41bf-a31d-b1861fe04fe0  (by GUID)</li>
+                      <li>
+                        <details>
+                          <summary>
+                            <b>JSON GET Response for Group Object</b>
+                          </summary>
+                          <script src="https://gist.github.com/SynapseGists/73b3af3a2b2c46bbcb8ca6a0b48a38cb.js"></script>
+                        </details>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </div>
+  
+            <p class="trimmed"></p>
+            
+            <div class="framed">
+              <h4>Summary of Native Object Access for Organization Unit (OU) Objects</h4>
+              <ul class="trimmed">
+                <li>Base URI: /myriad/ou</li>
+                <li>Supports: Create, Update, Delete for Organizational Unit objects</li>
+                <li>DACL: specified permissions, inherited permissions</li>
+                <li>Identified by Name, DistinguishedName, or GUID</li>
+                <li>
+                  <details>
+                    <summary>
+                      <b>Example: HTTP GET</b>
+                    </summary>
+            
+                    <ul class="trimmed">
+                      <li>http://{host:port}/myriad/ou/DeleteMe  (by Name)</li>
+                      <li>http://{host:port}/myriad/ou/ou=DeleteMe,ou=Synapse,dc=sandbox,dc=local  (by DistinguishedName)</li>
+                      <li>http://{host:port}/myriad/ou/faac53bd-e614-4b0e-9543-9a08d878fdaf  (by GUID)</li>
+                      <li>
+                        <details>
+                          <summary>
+                            <b>JSON GET Response for Organization Units (OU) Object</b>
+                          </summary>
+                          <script src="https://gist.github.com/SynapseGists/db591add94dc78084be470aa28abe172.js"></script>
+                        </details>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </div>
+              
             <p></p>
             <h3>Embedded Workflows</h3>
             <p>The myriAD ADAPI is built on Synapse and supports embedding an entire workflow, which can be coded in a variety of languages.

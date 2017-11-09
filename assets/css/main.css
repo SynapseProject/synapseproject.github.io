@@ -1767,6 +1767,11 @@
 		margin: 0 0 2em 0;
 	}
 
+	p.trimmed {
+		margin: 0 0 0.75em 0;
+	}
+
+
 	h1, h2, h3, h4, h5, h6 {
 		color: #ffffff;
 		font-family: Raleway, Helvetica, sans-serif;
@@ -1839,6 +1844,18 @@
 		font-style: italic;
 		margin: 0 0 2em 0;
 		padding: 0.5em 0 0.5em 2em;
+	}
+
+	details {
+		cursor: pointer;
+	}
+
+	.framed {
+		background: rgba(255, 255, 255, 0.025);
+		border-radius: 5px;
+		border: solid 2px rgba(255, 255, 255, 0.125);
+		font-size: 0.9em;
+		padding: 0.25em 0.65em;
 	}
 
 	code {
@@ -2225,6 +2242,12 @@
 			padding-left: 0.25em;
 		}
 
+	ul.trimmed {
+		list-style: disc;
+		margin: 0 0 0 0;
+		padding-left: 1em;
+	}
+	
 	ul {
 		list-style: disc;
 		margin: 0 0 2em 0;
