@@ -5,7 +5,7 @@
 
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>Synapse Core/Server</title>
+  <title>Synapse - myriAD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
   <link rel="stylesheet" href="assets/css/main.css">
@@ -190,13 +190,15 @@
               steps.
             </p>
             <h3>Security Design</h3>
-            <p>Objects are accessible under a discretionary access control list (DACL) model, meaning objects are directly permissioned
-              with allowed security principals. This implies that any tooling of choice may be used to manipulate allowed
-              objects; the ADAPI provides a data-driven implementation of convenience, and is guaranteed to meet implementation
-              standards for audit, logging, etc. In an enterprise setting, a typical implementation would populate the DACL
-              via an entitlements-based RBAC-grant process, where myriAD is participating in an SOA.</p>
-            <p>Embedded workflow scripts are serviced by the native myriAD (Synapse) RBAC and permmissioned accordingly. Typical
-              implementation would be for dedicated requirements.</p>
+            <p>Best practice security implementation provides that objects are accessible under a discretionary access control list (DACL)
+              model, meaning objects are directly permissioned with allowed security principals. This implies that any tooling of choice
+              may be used to manipulate allowed objects; the ADAPI provides a data-driven implementation of convenience, and is guaranteed
+              to meet implementation standards for audit, logging, etc. In an enterprise setting, a typical implementation would populate
+              the DACL via an entitlements-based RBAC-grant process, where myriAD is participating in an SOA.</p>
+            <p>myriAD supports the DACL-based RBAC approach as described above, but also provides an interface for custom role providers
+              via RoleManagers. Thus, if you don't want to use the built-in DaclRoleManager, you can implement your own security store
+              to abstract AD object access permissions. Separately, embedded workflow scripts are serviced by the native myriAD (Synapse)
+              RBAC and permmissioned accordingly. Typical implementation would be for dedicated requirements.</p>
             <h3>Technical Structure</h3>
             <h4>Directory Services and LDAP Core Library</h4>
             <p>All technical capability is housed in a .NET library, which contains the POCOs, worker classes, and utility methods.
