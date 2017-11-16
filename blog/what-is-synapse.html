@@ -8,13 +8,14 @@
             <li>Synapse is a way to
                 <strong>leverage the knowledge</strong> of technical SMEs in providing automation solutions. Synapse allows experts
                 to present varying technologies as enterprise-class REST services, without having to learn to be an enterprise
-                developer.</li>
+                developer.
+            </li>
             <li>Synapse is built with the express purpose of
                 <strong>enabling collaboration
                 </strong> in technical solutions.</li>
             <li>Synapse treats
                 <strong>automation data and automation technology as peers
-                </strong>?�?data is a first-class citizen in Synapse.</li>
+                </strong> - data is a first-class citizen in Synapse.</li>
             <li>Synapse provides a
                 <strong>simple, extensible abstraction layer</strong>, behind which any technology, including scripting languages,
                 compiled code, and tools, can be hosted.</li>
@@ -26,30 +27,39 @@
             <li>Synapse works on both Windows and *nix.</li>
         </ul>
         <h3>Basic Architecture</h3>
-        Default installation and standard usage/integration pattern.</div>
+        Default installation and standard usage/integration pattern.
+    </div>
     <div>
-        <img src="/images/syn_architecture_full.png" alt="Synapse Architecture" title="Synapse Architecture">Synapse is divided into 3 services:
-        <br>
+        <div class="framed" align="center">
+            <img src="/images/syn_architecture_full.png" alt="Synapse Architecture" title="Synapse Architecture" style="max-width:100%; height: auto; margin: 2em 2em;">
+        </div>
+
+        <br> Synapse is divided into 3 services:
+
         <ul>
             <li>
-                <b>Enterprise?</b>�?for editing the RBAC and publishing Synapse Plans
+                <b>Enterprise</b> - for editing the RBAC and publishing Synapse Plans
             </li>
             <li>
-                <b>Controller?</b>�?for launching Synapse Plans</li>
+                <b>Controller</b> - for launching Synapse Plans</li>
             <li>
-                <b>Node?</b>�?for executing Synapse Plans, either in local (agent-based) or remote (agentless) mode</li>
+                <b>Node</b> - for executing Synapse Plans, either in local (agent-based) or remote (agentless) mode</li>
         </ul>
+        <br>
         <h3>General Usage for Technology Presentation</h3>
         Synapse is generally technology-agnostic. In keeping with enabling SMEs to be highly productive, look to use Synapse as an
         abstraction layer over existing solutions, for the purpose of exposing them as REST services, participating in a
         service-oriented architecture (SOA).
         <br>
         <h3>Integration and Extensibility Patterns</h3>
-        If you want to use Synapse�s automation and workflow capability for distributed task execution, but you want to expose your
+        If you want to use Synapse's automation and workflow capability for distributed task execution, but you want to expose your
         REST services under URIs and data formats that align with your business purpose, consider extending Synapse with
         a custom ApiController.
-        <br> Synapse as host, with a custom ApiController.</div>
-    <img src="/images/syn_architecture_custom.png" alt="Custom URI" title="Custom URI">
+        <br> Synapse as host, with a custom ApiController.
+    </div>
+    <div class="framed" align="center">
+        <img src="/images/syn_architecture_custom.png" alt="Custom URI" title="Custom URI" style="max-width:100%; height: auto; margin: 2em 2em;">
+    </div>
     <div>Another available option, coming soon, will allow embedding Synapse within existing applications, thus completely hiding
         Synapse's external presence. This would be a useful pattern for extending the capability of existing an code-base
         without needing to change any architectural elements of the application design.
