@@ -2,6 +2,9 @@
     <h2>What is Synapse?</h2>
     <p>Synapse is an open-source, lightweight execution engine designed to take data from disparate, federated sources and connect
         it to a process. Synapse is built to run as a local or remote process.</p>
+    <div class="framed" align="center">
+        <img src="/images/syn_concept_mc_io.png" alt="Synapse" title="Synapse" style="max-width:100%; height: auto; margin: 1em 1em;">
+    </div>
     <h3>Synapse, Philosophically</h3>
     <ul>
         <li>Synapse is a way to
@@ -25,7 +28,7 @@
         <li>Synapse works on both Windows and *nix.</li>
     </ul>
     <h3>Basic Architecture</h3>
-    
+
     <div>
         <div class="framed" align="center">
             <img src="/images/syn_architecture_full.png" alt="Synapse Architecture" title="Synapse Architecture" style="max-width:100%; height: auto; margin: 1em 1em;">
@@ -43,43 +46,45 @@
             <li>
                 <b>Node</b> - for executing Synapse Plans, either in local (agent-based) or remote (agentless) mode</li>
         </ul>
-        <br>
+
         <h3>General Usage for Technology Presentation</h3>
-        <p>Synapse is generally technology-agnostic. In keeping with enabling SMEs to be highly productive, look to use Synapse as an
-        abstraction layer over existing solutions, for the purpose of exposing them as REST services, participating in a
-        service-oriented architecture (SOA).</p>
-        <h3>Integration and Extensibility Patterns</h3>
-        <p>If you want to use Synapse's automation and workflow capability for distributed task execution, but you want to expose your
-        REST services under URIs and data formats that align with your business purpose, consider extending Synapse with
-        a custom ApiController.</p>
+        <p>Synapse is generally technology-agnostic. In keeping with enabling SMEs to be highly productive, look to use Synapse
+            as an abstraction layer over existing solutions, for the purpose of exposing them as REST services, participating
+            in a service-oriented architecture (SOA).</p>
+        <div class="framed" align="center">
+                <img src="/images/syn_abstraction_io.png" alt="Synapse Abstraction" title="Synapse Abstraction" style="max-width:100%; height: auto; margin: 1em 1em;">
+            </div>
+                <h3>Integration and Extensibility Patterns</h3>
+        <p>If you want to use Synapse's automation and workflow capability for distributed task execution, but you want to expose
+            your REST services under URIs and data formats that align with your business purpose, consider extending Synapse
+            with a custom ApiController.</p>
     </div>
     <div class="framed" align="center">
         <img src="/images/syn_architecture_custom.png" alt="Custom URI" title="Custom URI" style="max-width:100%; height: auto; margin: 1em 1em;">
     </div>
     <figcaption>Synapse as host, with a custom ApiController<figcaption>
-    <div><p>Another available option, coming soon, will allow embedding Synapse within existing applications, thus completely hiding
-        Synapse's external presence. This would be a useful pattern for extending the capability of existing an code-base
-        without needing to change any architectural elements of the application design.</p>
-        <h3>Summary and Use-Cases</h3>
-        Synapse is designed to be a general purpose, workflow-based, distributed-processing automation engine. Synapse differs from
-        other, similar solutions in that it treats automation data as a first-class citizen, specifically to support quality
-        data management practices in the enterprise.
-        <br>
-        <h4>Use-Cases</h4>
-        <ul>
-            <li>Originate a Synapse-based solution for a script archive.</li>
-        </ul>
-        <blockquote>
-            <em>Example</em>: SMEs, both senior and junior, often have a suite of "admin scripts" that solve common problems.
-            Use Synapse to expose these scripts for delegation under a self-service model. Encourage contributions from all
-            parts of the team to enable a functional DevOps dynamic.</blockquote>
-        <ul>
-            <li>Use the Controller as a shim over an existing non-service solution to provide a REST interface.</li>
-            <li>Abstract disparate tools under a single interface to insulate integrators.
-            </li>
-        </ul>
-        <blockquote>
-            <em>Example</em>: Application developers and Operations people, whether in a DevOps model or not, often use third-party
-            tooling to administer "external" functions. Use Synapse to expose tooling interfaces under an SOA.</blockquote>
-    </div>
+    <p>Another available option, coming soon, will allow embedding Synapse within existing applications, thus completely hiding
+        Synapse's external presence. This would be a useful pattern for extending the capability of existing an code-base without
+        needing to change any architectural elements of the application design.</p>
+    <h3>Summary and Use-Cases</h3>
+    Synapse is designed to be a general purpose, workflow-based, distributed-processing automation engine. Synapse differs from
+    other, similar solutions in that it treats automation data as a first-class citizen, specifically to support quality data
+    management practices in the enterprise.
+
+    <h4>Use-Cases</h4>
+    <ul>
+        <li>Originate a Synapse-based solution for a script archive.</li>
+    </ul>
+    <blockquote>
+        <em>Example</em>: SMEs, both senior and junior, often have a suite of "admin scripts" that solve common problems. Use Synapse
+        to expose these scripts for delegation under a self-service model. Encourage contributions from all parts of the team
+        to enable a functional DevOps dynamic.</blockquote>
+    <ul>
+        <li>Use the Controller as a shim over an existing non-service solution to provide a REST interface.</li>
+        <li>Abstract disparate tools under a single interface to insulate integrators.
+        </li>
+    </ul>
+    <blockquote>
+        <em>Example</em>: Application developers and Operations people, whether in a DevOps model or not, often use third-party tooling
+        to administer "external" functions. Use Synapse to expose tooling interfaces under an SOA.</blockquote>
 </section>
