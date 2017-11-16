@@ -1,15 +1,79 @@
 <section>
-    <h2>foo</h2>
-    <a href="#" class="image fit">foo</a>
-    <p>Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet
-        placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum
-        accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia
-        interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia
-        erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan commodo odio cubilia ac eu interdum placerat
-        placerat arcu commodo lobortis adipiscing semper ornare pellentesque.</p>
-    <p>Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non
-        ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis
-        faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis.
-        Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet blandit adipiscing
-        arcu ante.</p>
+    <h2>What is Synapse?</h2>
+    <div>Synapse is an open-source, lightweight execution engine designed to take data from disparate, federated sources and connect
+        it to a process. Synapse is built to run as a local or remote process.</div>
+    <div>
+        <h3>Synapse, Philosophically</h3>
+        <ul>
+            <li>Synapse is a way to
+                <strong>leverage the knowledge</strong> of technical SMEs in providing automation solutions. Synapse allows experts
+                to present varying technologies as enterprise-class REST services, without having to learn to be an enterprise
+                developer.</li>
+            <li>Synapse is built with the express purpose of
+                <strong>enabling collaboration
+                </strong> in technical solutions.</li>
+            <li>Synapse treats
+                <strong>automation data and automation technology as peers
+                </strong>?�?data is a first-class citizen in Synapse.</li>
+            <li>Synapse provides a
+                <strong>simple, extensible abstraction layer</strong>, behind which any technology, including scripting languages,
+                compiled code, and tools, can be hosted.</li>
+        </ul>
+        <h3>Synapse, Technically</h3>
+        <ul>
+            <li>Synapse is a REST-enabled service designed to execute tasks in local or remote processing scenarios. Synapse�s
+                capability is extended through new scripts, custom Handlers, and custom Controllers.</li>
+            <li>Synapse works on both Windows and *nix.</li>
+        </ul>
+        <h3>Basic Architecture</h3>
+        Default installation and standard usage/integration pattern.</div>
+    <div>
+        <img src="/images/syn_architecture_full.png" alt="Synapse Architecture" title="Synapse Architecture">Synapse is divided into 3 services:
+        <br>
+        <ul>
+            <li>
+                <b>Enterprise?</b>�?for editing the RBAC and publishing Synapse Plans
+            </li>
+            <li>
+                <b>Controller?</b>�?for launching Synapse Plans</li>
+            <li>
+                <b>Node?</b>�?for executing Synapse Plans, either in local (agent-based) or remote (agentless) mode</li>
+        </ul>
+        <h3>General Usage for Technology Presentation</h3>
+        Synapse is generally technology-agnostic. In keeping with enabling SMEs to be highly productive, look to use Synapse as an
+        abstraction layer over existing solutions, for the purpose of exposing them as REST services, participating in a
+        service-oriented architecture (SOA).
+        <br>
+        <h3>Integration and Extensibility Patterns</h3>
+        If you want to use Synapse�s automation and workflow capability for distributed task execution, but you want to expose your
+        REST services under URIs and data formats that align with your business purpose, consider extending Synapse with
+        a custom ApiController.
+        <br> Synapse as host, with a custom ApiController.</div>
+    <img src="/images/syn_architecture_custom.png" alt="Custom URI" title="Custom URI">
+    <div>Another available option, coming soon, will allow embedding Synapse within existing applications, thus completely hiding
+        Synapse's external presence. This would be a useful pattern for extending the capability of existing an code-base
+        without needing to change any architectural elements of the application design.
+        <br>
+        <h3>Summary and Use-Cases</h3>
+        Synapse is designed to be a general purpose, workflow-based, distributed-processing automation engine. Synapse differs from
+        other, similar solutions in that it treats automation data as a first-class citizen, specifically to support quality
+        data management practices in the enterprise.
+        <br>
+        <h4>Use-Cases</h4>
+        <ul>
+            <li>Originate a Synapse-based solution for a script archive.</li>
+        </ul>
+        <blockquote>
+            <em>Example</em>: SMEs, both senior and junior, often have a suite of �admin scripts� that solve common problems.
+            Use Synapse to expose these scripts for delegation under a self-service model. Encourage contributions from all
+            parts of the team to enable a functional DevOps dynamic.</blockquote>
+        <ul>
+            <li>Use the Controller as a shim over an existing non-service solution to provide a REST interface.</li>
+            <li>Abstract disparate tools under a single interface to insulate integrators.
+            </li>
+        </ul>
+        <blockquote>
+            <em>Example</em>: Application developers and Operations people, whether in a DevOps model or not, often use third-party
+            tooling to administer �external� functions. Use Synapse to expose tooling interfaces under an SOA.</blockquote>
+    </div>
 </section>
