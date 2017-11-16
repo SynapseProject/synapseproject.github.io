@@ -93,7 +93,7 @@
     };
     function getPage() {
       var p = getUrlParameter('p');
-      p = isNullOrWhitespace( p ) ? "error" : p;
+      p = isNullOrWhitespace( p ) ? "what-is-synapse" : p;
       $.get(p + ".html", function (response) { $('#blogpage').append(response) });
     };
   </script>

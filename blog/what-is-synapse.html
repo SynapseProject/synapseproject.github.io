@@ -1,36 +1,36 @@
 <section>
     <h2>What is Synapse?</h2>
-    <div>Synapse is an open-source, lightweight execution engine designed to take data from disparate, federated sources and connect
-        it to a process. Synapse is built to run as a local or remote process.</div>
-        <h3>Synapse, Philosophically</h3>
-        <ul>
-            <li>Synapse is a way to
-                <strong>leverage the knowledge</strong> of technical SMEs in providing automation solutions. Synapse allows experts
-                to present varying technologies as enterprise-class REST services, without having to learn to be an enterprise
-                developer.
-            </li>
-            <li>Synapse is built with the express purpose of
-                <strong>enabling collaboration
-                </strong> in technical solutions.</li>
-            <li>Synapse treats
-                <strong>automation data and automation technology as peers
-                </strong> - data is a first-class citizen in Synapse.</li>
-            <li>Synapse provides a
-                <strong>simple, extensible abstraction layer</strong>, behind which any technology, including scripting languages,
-                compiled code, and tools, can be hosted.</li>
-        </ul>
-        <h3>Synapse, Technically</h3>
-        <ul>
-            <li>Synapse is a REST-enabled service designed to execute tasks in local or remote processing scenarios. Synapse�s
-                capability is extended through new scripts, custom Handlers, and custom Controllers.</li>
-            <li>Synapse works on both Windows and *nix.</li>
-        </ul>
-        <h3>Basic Architecture</h3>
-        Default installation and standard usage/integration pattern.
+    <p>Synapse is an open-source, lightweight execution engine designed to take data from disparate, federated sources and connect
+        it to a process. Synapse is built to run as a local or remote process.</p>
+    <h3>Synapse, Philosophically</h3>
+    <ul>
+        <li>Synapse is a way to
+            <strong>leverage the knowledge</strong> of technical SMEs in providing automation solutions. Synapse allows experts to
+            present varying technologies as enterprise-class REST services, without having to learn to be an enterprise developer.
+        </li>
+        <li>Synapse is built with the express purpose of
+            <strong>enabling collaboration
+            </strong> in technical solutions.</li>
+        <li>Synapse treats
+            <strong>automation data and automation technology as peers
+            </strong> - data is a first-class citizen in Synapse.</li>
+        <li>Synapse provides a
+            <strong>simple, extensible abstraction layer</strong>, behind which any technology, including scripting languages, compiled
+            code, and tools, can be hosted.</li>
+    </ul>
+    <h3>Synapse, Technically</h3>
+    <ul>
+        <li>Synapse is a REST-enabled service designed to execute tasks in local or remote processing scenarios. Synapse�s capability
+            is extended through new scripts, custom Handlers, and custom Controllers.</li>
+        <li>Synapse works on both Windows and *nix.</li>
+    </ul>
+    <h3>Basic Architecture</h3>
+    
     <div>
         <div class="framed" align="center">
             <img src="/images/syn_architecture_full.png" alt="Synapse Architecture" title="Synapse Architecture" style="max-width:100%; height: auto; margin: 1em 1em;">
         </div>
+        Default installation and standard usage/integration pattern.
 
         <br> Synapse is divided into 3 services:
 
@@ -45,23 +45,21 @@
         </ul>
         <br>
         <h3>General Usage for Technology Presentation</h3>
-        Synapse is generally technology-agnostic. In keeping with enabling SMEs to be highly productive, look to use Synapse as an
+        <p>Synapse is generally technology-agnostic. In keeping with enabling SMEs to be highly productive, look to use Synapse as an
         abstraction layer over existing solutions, for the purpose of exposing them as REST services, participating in a
-        service-oriented architecture (SOA).
-        <br>
+        service-oriented architecture (SOA).</p>
         <h3>Integration and Extensibility Patterns</h3>
-        If you want to use Synapse's automation and workflow capability for distributed task execution, but you want to expose your
+        <p>If you want to use Synapse's automation and workflow capability for distributed task execution, but you want to expose your
         REST services under URIs and data formats that align with your business purpose, consider extending Synapse with
-        a custom ApiController.
+        a custom ApiController.</p>
         <br> Synapse as host, with a custom ApiController.
     </div>
     <div class="framed" align="center">
         <img src="/images/syn_architecture_custom.png" alt="Custom URI" title="Custom URI" style="max-width:100%; height: auto; margin: 1em 1em;">
     </div>
-    <div>Another available option, coming soon, will allow embedding Synapse within existing applications, thus completely hiding
+    <div><p>Another available option, coming soon, will allow embedding Synapse within existing applications, thus completely hiding
         Synapse's external presence. This would be a useful pattern for extending the capability of existing an code-base
-        without needing to change any architectural elements of the application design.
-        <br>
+        without needing to change any architectural elements of the application design.</p>
         <h3>Summary and Use-Cases</h3>
         Synapse is designed to be a general purpose, workflow-based, distributed-processing automation engine. Synapse differs from
         other, similar solutions in that it treats automation data as a first-class citizen, specifically to support quality
