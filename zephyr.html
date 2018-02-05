@@ -5,7 +5,7 @@
 
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>Synapse - Syntinel</title>
+  <title>Synapse - Zephyr</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
   <link rel="stylesheet" href="assets/css/main.css">
@@ -20,7 +20,7 @@
     <!-- Header -->
     <header id="header">
       <h1>
-        <a href="index.html">Synapse Project</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="syntinel.html">Syntinel</a>
+        <a href="index.html">Synapse Project</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="zephyr.html">Zephyr</a>
       </h1>
       <nav>
         <a href="#menu">Menu</a>
@@ -31,24 +31,24 @@
       <div class="inner">
         <h2>Menu</h2>
         <ul class="links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="synapse.html">Synapse Core/Server</a></li>
-          <li><a href="myriAD.html">myriAD</a></li>
-          <li><a href="syntinel.html">Syntinel</a></li>
-          <li><a href="zephyr.html">Zephyr</a></li>
-      </ul>
-      <a href="#" class="close">Close</a>
-    </div>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="synapse.html">Synapse Core/Server</a></li>
+            <li><a href="myriAD.html">myriAD</a></li>
+            <li><a href="syntinel.html">Syntinel</a></li>
+            <li><a href="zephyr.html">Zephyr</a></li>
+        </ul>
+        <a href="#" class="close">Close</a>
+      </div>
     </nav>
     <!-- Wrapper -->
     <section id="wrapper">
       <header>
         <div class="inner">
           <div class="logo">
-            <img src="images/syntinel_logo.png" style="width: 100px; height: 100px;">
+            <img src="images/zephyr_logo_tw.png" style="width: 100px; height: 100px;">
           </div>
-          <h2>Syntinel</h2>
-          <p>Syntinel is a policy enforcement engine for Amazon Web Services and Microsoft Azure.</p>
+          <h2>Zephyr</h2>
+          <p>Zephyr is the namespace for utility libraries in Synapse. Zephyr utilities are suitable for stand-alone usage outside Synapse.</p>
         </div>
       </header>
       <!-- Content -->
@@ -56,28 +56,44 @@
         <div class="inner">
           <section>
             <h2>Overview</h2>
-            <p>Syntinel is a targeted implementation of Synapse.Server making use of the AWS and Azure SDKs via Handlers, where
-              the Synapse Plans provide simple query/action interfaces into managing your cloud environments.</p>
-
+            <p>Zephyr utilities are the stand-alone libraries we generate during Synapse development. Generally, we take them and
+                wrap with Synapse Handlers, or link them in multiple Handlers as common libs. Either way, Zephyr libs are developed fully
+                agnostic of Synapse consumption, and are therefore suitable for any number of integration use-cases. All Zephyr libs,
+                along with other shared Synapse libs, are published on <a href="https://www.nuget.org/packages?q=synapse" target="_blank">nuget.org</a>.</p>
             <p></p>
 
-            <h3 class="major">Use-Cases</h3>
-            <ul>
-              <li>Query uptime on servers and shut-down development kit.</li>
-              <li>Validate tags for compliance against desired structure.</li>
-              <li>Validate environment settings for drift against template definition.</li>
-              </ul>
-            <p></p>
-            <h2 class="major">Release Status</h2>
-            <p>Syntinel is in active development and not fully released as a product at this time.  You may evauluate the AWS Handlers at the links below.
-            </p>
-            <p></p>
-            <div class="icon fa-github">&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/SynapseProject/handlers.Aws.net" target="_blank">Source Code
-              </a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/SynapseProject/handlers.Aws.net/releases" target="_blank">Current Release
-              </a>
+            <h2 class="major">Libraries</h2>
+
+            <div class="table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Description</th>
+                      <th>code</th>
+                      <th>nuget</th>
+                      <th>docs</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                        <td>Zephyr.FileSystem</td>
+                        <td>A set of classes and methods designed to provide file system support across multiple implementation types, including Windows Local Filesystem, Windows Netowrk Filesystem, and Amazon S3.  Roadmap includes support for Azure Blob storage.</td>
+                        <td align="center"><a href="https://github.com/SynapseProject/zephyr.FileSystem.net" target="_blank"><div class="icon fa-github">&nbsp;</div></a></td>
+                        <td align="center"><a href="https://www.nuget.org/packages/Zephyr.FileSystem/" target="_blank"><img src="images/nuget.png" style="width: 18px; height: 18px;"></a></td>
+                        <td align="center"><a href="http://zephyr.readthedocs.io/en/latest/FileSystem/filesystem/" target="_blank"><div class="icon fa-book">&nbsp;</div></a></td>
+                    </tr>
+                    <tr>
+                        <td>Zephyr.DataTransformation</td>
+                        <td>Provides capability to take YAML, JSON, or XML data and reformat it, or convert it from one format to another. Transform options include XSLT, Regex, or JsonQuery.</td>
+                        <td align="center"><a href="https://github.com/SynapseProject/zephyr.DataTransformation.net" target="_blank"><div class="icon fa-github">&nbsp;</div></a></td>
+                        <td align="center"><a href="https://www.nuget.org/packages/Zephyr.DataTransformation/" target="_blank"><img src="images/nuget.png" style="width: 18px; height: 18px;"></a></td>
+                        <td align="center"><a href="http://zephyr.readthedocs.io/en/latest/DataTransformation/" target="_blank"><div class="icon fa-book">&nbsp;</div></a></td>
+                    </tr>
+                  </tbody>
+                </table>
             </div>
+        </p>
           </section>
         </div>
       </div>
