@@ -63,22 +63,19 @@
             </div>
             <p></p>
             <h2>Components</h2>
-            <h3>Recon: Scripts, agents, or services that discover actionable data</h3>
+            <h3>Reporter</h3>
+            <p>Scripts, Services, or Agents that discover and forward actionable data to the Relay tier.</p>
+            <h3>Recon</h3>
+            <p>A Syntinel-provided Reporter.</p>
+            <h3>Relay Tier</h3>
             <ul>
-              <li>Synapse Plans</li>
-              <li>as simple as bash/curl on cron or powershell on task scheduler</li>
-              <li>SaaS, such as EC2 resize info</li>
+              <li>Formats Reporter data to "Signal"</li>
+              <li>Sends Signal message to Subscribers (push notification)</li>
+              <li>Record Signal message in Store</li>
+              <li>Includes Gateway for Signal Cue Response</li>
             </ul>
-            <h3>Reporter: Service interface for publishing data</h3>
-            <ul>
-              <li>Recon --&gt; Reporter</li>
-              <li>Anything --&gt; Reporter</li>
-            </ul>
-            <h3>Relay: Asynchronous push-notification request/response for client interaction</h3>
-            <ul>
-              <li>Mobile-first: Slack, Teams, Email, native-mobile</li>
-            </ul>
-            <h3>Resolver: Receives client response and passes to automation provider</h3>
+            <h3>Resolver</h3>
+            <p>Receives client response and passes to automation provider.</p>
             <ul>
               <li>Broker: examines config for redirect to proper Resolver</li>
               <li>Resolver: Automation provider, could be “anything, anywhere”</li>
